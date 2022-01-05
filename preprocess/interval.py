@@ -30,12 +30,25 @@ class ArrInterval:
         return self._interval.overlaps(other._interval)
 
     def __eq__(self, other) -> bool:
-        return (
-            self.arr == other.arr
-            and self.start == other.start
-            and self.end == other.end
-            and self.closed == other.closed
-        )
+        return (self.start, self.end, self.arr, self.closed) == (other.start, other.end, other.arr, other.closed)
+
+    def __lt__(self, other) -> bool:
+        return (self.start, self.end, self.arr, self.closed) < (other.start, other.end, other.arr, other.closed)
+
+    def __gt__(self, other) -> bool:
+        return (self.start, self.end, self.arr, self.closed) > (other.start, other.end, other.arr, other.closed)
+
+    def __ne__(self, other) -> bool:
+        return not (self == other)
+
+    def __le__(self, other) -> bool:
+        return (self.start, self.end, self.arr, self.closed) <= (other.start, other.end, other.arr, other.closed)
+
+    def __ge__(self, other) -> bool:
+        return (self.start, self.end, self.arr, self.closed) >= (other.start, other.end, other.arr, other.closed)
+
+    def __repr__(self) -> str:
+        return f'ArrInterval({repr(self.start)}, {repr(self.end)}, {self.arr}, closed="{self.closed}")'
 
 
 class ArrTimeline:
