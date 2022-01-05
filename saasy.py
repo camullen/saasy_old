@@ -189,6 +189,8 @@ test_bookings = pd.DataFrame.from_records(
     ]
 )
 
+from preprocess.interval import ArrInterval
 
 if __name__ == "__main__":
-    bookings_to_arr(test_bookings)
+    my_interval = ArrInterval.empty_interval()
+    print(my_interval)
