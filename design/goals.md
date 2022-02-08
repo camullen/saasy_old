@@ -44,6 +44,6 @@ The input data would be a CSV list of contracts containing the following columns
 - **customer_id** - The unique identifier of the customer
 - **start_date** - The start date of the contract
 - **end_date** - The end date of the contract
-- **acv** - The annual contract value
+- **tcv** - The total contract value for the entire period of the contract
 - Optional Columns:
   - **close_date** - The closing date of the contract if distinct from start date for bookings analysis (otherwise start date will be used)
